@@ -1,5 +1,5 @@
 services:
-  frontend:
+  frontend-eduardovedes:
     container_name: eduardovedes-frontend
     image: ghcr.io/evedes/eduardovedes/frontend:latest
     restart: unless-stopped
