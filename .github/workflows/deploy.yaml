@@ -65,7 +65,7 @@ jobs:
             echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
             docker pull ghcr.io/${{ github.repository }}/backend:latest
             docker pull ghcr.io/${{ github.repository }}/frontend:latest
-            docker compose -f docker-compose-eduardovedes.yaml up -d --remove-orphans
+            docker compose -f docker-compose-eduardovedes.yaml up -d
 
       - name: List and remove non-latest images in Digital Ocean Droplet
         uses: appleboy/ssh-action@v0.1.0
