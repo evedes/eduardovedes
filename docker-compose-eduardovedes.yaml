@@ -3,15 +3,3 @@ services:
     container_name: eduardovedes-frontend
     image: ghcr.io/evedes/eduardovedes/frontend:latest
     restart: unless-stopped
-  nginx:
-    image: nginx:latest
-    container_name: eduardovedes-nginx
-    restart: unless-stopped
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./nginx-eduardovedes.conf:/etc/nginx/conf.d/default.conf
-      - ./ssl-eduardovedes:/etc/nginx/ssl
-    depends_on:
-      - frontend
