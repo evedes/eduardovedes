@@ -30,7 +30,7 @@ export default function Home() {
         <div className="text-sm font-semibold">eduardo.vedes@gmail.com</div>
         <div className="sm:text-lg w-96 text-center px-8 sm:p-0">
           ❤️ Helping you to grow and thrive as a software engineer, 🌞 Solar
-          punk, 🦄 Indie hacker, 📒 Author of Code Your Futre, ☠️ Software
+          punk, 🦄 Indie hacker, 📒 Author of Code Your Future, ☠️ Software
           engineer
         </div>
         <div className="flex flex-col sm:text-lg px-8 sm:p-0 sm:gap-4 text-center w-96">
@@ -47,13 +47,28 @@ export default function Home() {
           </Link>
         </div>
         <div className="flex gap-4 py-2">
-          <Link href="https://www.linkedin.com/in/evedes/" prefetch={false}>
+          <Link
+            href="https://www.linkedin.com/in/evedes/"
+            prefetch={false}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FaLinkedin className="w-6 h-6" />
           </Link>
-          <Link href="https://discord.gg/Z87c4twuaX" prefetch={false}>
+          <Link
+            href="https://discord.gg/Z87c4twuaX"
+            prefetch={false}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FaTwitter className="w-6 h-6" />
           </Link>
-          <Link href="https://x.com/eduardovedes" prefetch={false}>
+          <Link
+            href="https://x.com/eduardovedes"
+            prefetch={false}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FaDiscord className="w-6 h-6" />
           </Link>
         </div>
