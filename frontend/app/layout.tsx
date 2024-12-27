@@ -9,6 +9,7 @@ const jetBrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Eduardo Vedes' Site",
   description: "Eduardo Vedes' Site",
+  metadataBase: new URL("https://eduardovedes.com"),
   manifest: "/manifest.json",
   icons: {
     icon: [
