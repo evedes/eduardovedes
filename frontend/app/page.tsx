@@ -4,7 +4,7 @@ import { FaDiscord, FaLinkedin, FaTwitter } from "react-icons/fa6";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col h-screen">
       <div className="grow flex flex-col gap-6 sm:gap-8 justify-center items-center">
         <div className="hidden sm:block">
           <Image
@@ -73,7 +73,7 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      <div className="h-12 text-xs flex justify-center items-center">
+      <div className="text-xs flex justify-center items-center pb-16">
         2024 &copy; All Rights Reserved
       </div>
     </div>
