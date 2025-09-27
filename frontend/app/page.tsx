@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaDiscord, FaLinkedin, FaTwitter } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 export default function Home() {
   return (
@@ -28,24 +28,6 @@ export default function Home() {
           Eduardo Vedes
         </h1>
         <div className="text-sm font-semibold">eduardo.vedes@gmail.com</div>
-        <div className="sm:text-lg w-96 text-center px-8 sm:p-0">
-          ❤️ Helping you to grow and thrive as a software engineer, 🌞 Solar
-          punk, 🦄 Indie hacker, 📒 Author of Code Your Future, ☠️ Software
-          engineer
-        </div>
-        <div className="flex flex-col sm:text-lg px-8 sm:p-0 sm:gap-4 text-center w-96">
-          <div>
-            Subscribe NOW to my newsletter! Every Saturday morning, 10:00 AM
-            (GMT+1) in your inbox! 📩
-          </div>
-          <Link
-            className="underline text-red-600 hover:text-red-500 font-semibold"
-            prefetch={false}
-            href="https://codeyourfuture.substack.com"
-          >
-            codeyourfuture.substack.com
-          </Link>
-        </div>
         <div className="flex gap-4 py-2">
           <Link
             href="https://www.linkedin.com/in/evedes/"
@@ -53,15 +35,15 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaLinkedin className="w-6 h-6" />
+            <FaLinkedin className="w-6 h-6 hover:fill-[#0866C2] transition-colors duration-300 ease-in-out" />
           </Link>
           <Link
-            href="https://discord.gg/Z87c4twuaX"
+            href="https://github.com/evedes"
             prefetch={false}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaTwitter className="w-6 h-6" />
+            <FaGithub className="w-6 h-6 rounded-full hover:bg-black hover:fill-white transition-colors duration-300 ease-in-out" />
           </Link>
           <Link
             href="https://x.com/eduardovedes"
@@ -69,12 +51,12 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaDiscord className="w-6 h-6" />
+            <FaXTwitter className="w-6 h-6 hover:fill-white hover:bg-black transition-colors duration-300 ease-in-out" />
           </Link>
         </div>
       </div>
       <div className="text-xs flex justify-center items-center pb-16">
-        2024 &copy; All Rights Reserved
+        2025 &copy; All Rights Reserved
       </div>
     </div>
   );
