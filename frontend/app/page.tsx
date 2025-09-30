@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaXTwitter, FaHashnode } from "react-icons/fa6";
 
 export default function Home() {
+  console.log("Home");
   return (
     <div className="flex flex-col h-screen">
       <div className="grow flex flex-col gap-6 sm:gap-8 justify-center items-center">
@@ -11,6 +12,7 @@ export default function Home() {
             src="/profile-pic.png"
             className="rounded-full shadow-xl"
             alt="Eduardo Vedes"
+            priority
             width={180}
             height={180}
           />
@@ -35,7 +37,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaLinkedin className="w-6 h-6 hover:fill-[#0866C2] transition-colors duration-300 ease-in-out" />
+            <FaLinkedin className="size-8 hover:fill-[#0866C2] transition-colors duration-300 ease-in-out" />
           </Link>
           <Link
             href="https://github.com/evedes"
@@ -43,7 +45,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaGithub className="w-6 h-6 rounded-full hover:bg-black hover:fill-white transition-colors duration-300 ease-in-out" />
+            <FaGithub className="size-8 rounded-full hover:bg-black hover:fill-white transition-colors duration-300 ease-in-out" />
           </Link>
           <Link
             href="https://x.com/eduardovedes"
@@ -51,9 +53,20 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaXTwitter className="w-6 h-6 hover:fill-white hover:bg-black transition-colors duration-300 ease-in-out" />
+            <FaXTwitter className="size-8 hover:fill-[#0866C2] transition-colors duration-300 ease-in-out" />
           </Link>
+
+          <Link
+            href="https://blog.eduardovedes.com"
+            prefetch={false}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaHashnode className="size-8 text-gray-800 hover:text-black transition-colors duration-300 ease-in-out" />
+          </Link>
+
         </div>
+
       </div>
       <div className="text-xs flex justify-center items-center pb-16">
         2025 &copy; All Rights Reserved
