@@ -72,9 +72,11 @@ export default function Home() {
           >
             <FaHashnode className="size-8 text-gray-800 hover:text-black transition-colors duration-300 ease-in-out" />
           </Link>
-
         </div>
-
+        <div className="text-center">
+          CTO and Co-Founder at <Link href="https://getzarta.com" prefetch={false} target="_blank" rel="noopener noreferrer" className="font-semibold underline hover:no-underline hover:text-red-600 transition-all duration-300 ease-in-out"
+          >Zarta</Link>.<br/>Automating the <span className="font-semibold">GRUNT WORK</span> of documentation.
+        </div>
       </div>
       <div className="text-xs flex justify-center items-center pb-16">
         2025 &copy; All Rights Reserved
