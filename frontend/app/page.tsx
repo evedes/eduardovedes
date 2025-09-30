@@ -1,12 +1,20 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaXTwitter, FaHashnode } from "react-icons/fa6";
 
 export default function Home() {
-  console.log("Home");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <div className="flex flex-col h-screen">
-      <div className="grow flex flex-col gap-6 sm:gap-8 justify-center items-center">
+      <div className={`grow flex flex-col gap-6 sm:gap-8 justify-center items-center transition-all duration-700 ease-out ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}>
         <div className="hidden sm:block">
           <Image
             src="/profile-pic.png"
