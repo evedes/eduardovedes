@@ -12,7 +12,9 @@ export default function BlogPage() {
   const posts = getAllPosts();
 
   return (
-    <div className={`min-h-screen bg-white dark:bg-zinc-900 transition-colors duration-300 ${merriweather.className}`}>
+    <div
+      className={`min-h-screen bg-white dark:bg-zinc-900 transition-colors duration-300 ${merriweather.className}`}
+    >
       <div className="max-w-4xl mx-auto px-4 py-16">
         <div className="mb-12">
           <Link
@@ -27,7 +29,7 @@ export default function BlogPage() {
           Eduardo Vedes&apos; Blog
         </h1>
         <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-12">
-          Thoughts on software, design, and building products.
+          Thoughts on software and software engineer&apos;s growth.
         </p>
 
         {posts.length === 0 ? (
