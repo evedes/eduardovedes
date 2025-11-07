@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { JetBrains_Mono } from "next/font/google";
+import { ThemeProvider } from "./components/ThemeProvider";
+import { ThemeWrapper } from "./components/ThemeWrapper";
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -46,9 +48,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                if (theme === 'dark') {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                }
+              } catch (e) {}
+            `,
+          }}
+        />
+      </head>
       <body className={`${jetBrainsMono.className} antialiased`}>
-        {children}
+        <ThemeProvider>
+          <ThemeWrapper>{children}</ThemeWrapper>
+        </ThemeProvider>
       </body>
     </html>
   );
