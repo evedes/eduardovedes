@@ -13,6 +13,7 @@ export interface BlogPost {
   content: string;
   readingTime: string;
   tags?: string[];
+  image?: string;
 }
 
 export function getAllPosts(): BlogPost[] {
@@ -29,6 +30,10 @@ export function getAllPosts(): BlogPost[] {
       const fileContents = fs.readFileSync(fullPath, "utf8");
       const { data, content } = matter(fileContents);
 
+      // Extract image from content (look for first image in markdown)
+      const imageMatch = content.match(/!\[.*?\]\((.*?)\)/);
+      const image = imageMatch ? imageMatch[1] : undefined;
+
       return {
         slug,
         title: data.title || slug,
@@ -37,6 +42,7 @@ export function getAllPosts(): BlogPost[] {
         content,
         readingTime: readingTime(content).text,
         tags: data.tags || [],
+        image,
       };
     });
 
@@ -55,6 +61,10 @@ export function getPostBySlug(slug: string): BlogPost | null {
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const { data, content } = matter(fileContents);
 
+    // Extract image from content (look for first image in markdown)
+    const imageMatch = content.match(/!\[.*?\]\((.*?)\)/);
+    const image = imageMatch ? imageMatch[1] : undefined;
+
     return {
       slug,
       title: data.title || slug,
@@ -63,6 +73,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
       content,
       readingTime: readingTime(content).text,
       tags: data.tags || [],
+      image,
     };
   } catch {
     return null;

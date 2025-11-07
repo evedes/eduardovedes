@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaXTwitter, FaLinkedin } from "react-icons/fa6";
+import { SiSubstack } from "react-icons/si";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
@@ -55,7 +56,8 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="text-center text-zinc-800 dark:text-zinc-200">
+        <div className="text-center text-zinc-800 dark:text-zinc-200 flex items-center gap-2">
+          ✏️
           <Link
             href="/blog"
             className="font-semibold underline hover:no-underline hover:text-red-600 dark:hover:text-red-400 transition-all duration-300 ease-in-out"
@@ -89,6 +91,14 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             <FaXTwitter className="size-6 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-300 ease-in-out" />
+          </Link>
+          <Link
+            href="https://codeyourfuture.substack.com"
+            prefetch={false}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <SiSubstack className="size-6 text-zinc-600 dark:text-zinc-400 hover:text-[#FF6719] dark:hover:text-[#FF6719] transition-colors duration-300 ease-in-out" />
           </Link>
         </div>
         <div className="text-xs text-zinc-600 dark:text-zinc-400">

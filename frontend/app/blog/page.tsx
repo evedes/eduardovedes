@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getAllPosts } from "@/lib/blog";
 import { Merriweather } from "next/font/google";
 
@@ -41,6 +42,18 @@ export default function BlogPage() {
                 key={post.slug}
                 className="border-b border-zinc-200 dark:border-zinc-800 pb-8 last:border-0"
               >
+                {post.image && (
+                  <Link href={`/blog/${post.slug}`} className="block mb-4">
+                    <div className="relative w-full h-64 overflow-hidden rounded-lg">
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        fill
+                        className="object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  </Link>
+                )}
                 <Link href={`/blog/${post.slug}`}>
                   <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-2 hover:text-red-600 dark:hover:text-red-400 transition-colors">
                     {post.title}
