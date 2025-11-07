@@ -37,7 +37,7 @@ export function ThemeToggle() {
       {theme === "light" ? (
         <FaMoon className="size-5 text-zinc-800 dark:text-zinc-200" />
       ) : (
-        <FaSun className="size-5 text-yellow-500" />
+        <FaSun className="size-5 text-zinc-200" />
       )}
     </button>
   );

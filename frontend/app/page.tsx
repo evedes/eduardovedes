@@ -42,34 +42,8 @@ export default function Home() {
         <div className="text-sm font-semibold text-zinc-700 dark:text-zinc-300">
           eduardo.vedes@gmail.com
         </div>
-        <div className="flex gap-4 py-2 items-center">
-          <Link
-            href="https://www.linkedin.com/in/evedes/"
-            prefetch={false}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaLinkedin className="size-8 text-[#0866C2] hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out" />
-          </Link>
-          <Link
-            href="https://github.com/evedes"
-            prefetch={false}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaGithub className="size-8 text-zinc-800 dark:text-zinc-200 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out" />
-          </Link>
-          <Link
-            href="https://x.com/eduardovedes"
-            prefetch={false}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaXTwitter className="size-8 text-zinc-800 dark:text-zinc-200 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out" />
-          </Link>
-        </div>
         <div className="text-center text-zinc-800 dark:text-zinc-200">
-          Indie Hacker building{" "}
+          ☠️ Indie Hacker building{" "}
           <Link
             href="https://atomize.ink"
             prefetch={false}
@@ -80,9 +54,46 @@ export default function Home() {
             atomize.ink
           </Link>
         </div>
+
+        <div className="text-center text-zinc-800 dark:text-zinc-200">
+          <Link
+            href="/blog"
+            className="font-semibold underline hover:no-underline hover:text-red-600 dark:hover:text-red-400 transition-all duration-300 ease-in-out"
+          >
+            BLOG
+          </Link>
+        </div>
       </div>
-      <div className="text-xs flex justify-center items-center pb-16 text-zinc-600 dark:text-zinc-400">
-        2025 &copy; All Rights Reserved
+      <div className="flex flex-col gap-4 items-center pb-16">
+        <div className="flex gap-4 items-center">
+          <Link
+            href="https://www.linkedin.com/in/evedes/"
+            prefetch={false}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin className="size-6 text-zinc-600 dark:text-zinc-400 hover:text-[#0866C2] dark:hover:text-[#0866C2] transition-colors duration-300 ease-in-out" />
+          </Link>
+          <Link
+            href="https://github.com/evedes"
+            prefetch={false}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub className="size-6 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-300 ease-in-out" />
+          </Link>
+          <Link
+            href="https://x.com/eduardovedes"
+            prefetch={false}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaXTwitter className="size-6 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-300 ease-in-out" />
+          </Link>
+        </div>
+        <div className="text-xs text-zinc-600 dark:text-zinc-400">
+          2025 &copy; All Rights Reserved
+        </div>
       </div>
     </div>
   );
