@@ -9,10 +9,28 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Eduardo Vedes' Site",
-  description: "Eduardo Vedes' Site",
+  title: {
+    default: "Eduardo Vedes - Indie Hacker & Software Engineer",
+    template: "%s | Eduardo Vedes",
+  },
+  description: "Indie Hacker building atomize.ink. Software Engineer sharing insights on software development, soft skills, and engineering growth.",
+  keywords: ["Eduardo Vedes", "Software Engineer", "Indie Hacker", "Web Development", "Tech Blog", "atomize.ink"],
+  authors: [{ name: "Eduardo Vedes", url: "https://eduardovedes.com" }],
+  creator: "Eduardo Vedes",
+  publisher: "Eduardo Vedes",
   metadataBase: new URL("https://eduardovedes.com"),
   manifest: "/manifest.json",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   icons: {
     icon: [
       { url: "/favicons/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -27,18 +45,30 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "Eduardo Vedes' Site",
-    description: "Eduardo Vedes' Site",
+    title: "Eduardo Vedes - Indie Hacker & Software Engineer",
+    description: "Indie Hacker building atomize.ink. Software Engineer sharing insights on software development, soft skills, and engineering growth.",
     url: "https://eduardovedes.com",
-    siteName: "Eduardo Vedes' Site",
+    siteName: "Eduardo Vedes",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/profile-pic.png",
+        width: 180,
+        height: 180,
+        alt: "Eduardo Vedes",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Eduardo Vedes' Site",
-    description: "Eduardo Vedes' Site",
+    title: "Eduardo Vedes - Indie Hacker & Software Engineer",
+    description: "Indie Hacker building atomize.ink. Software Engineer sharing insights on software development, soft skills, and engineering growth.",
     creator: "@eduardovedes",
+    images: ["/profile-pic.png"],
+  },
+  alternates: {
+    canonical: "https://eduardovedes.com",
   },
 };
 

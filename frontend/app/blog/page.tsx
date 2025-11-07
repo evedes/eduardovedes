@@ -2,12 +2,33 @@ import Link from "next/link";
 import Image from "next/image";
 import { getAllPosts } from "@/lib/blog";
 import { Merriweather } from "next/font/google";
+import type { Metadata } from "next";
 
 const merriweather = Merriweather({
   weight: ["300", "400", "700"],
   subsets: ["latin"],
   display: "swap",
 });
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description: "Thoughts on software development, soft skills, and software engineer's growth. Insights from an indie hacker's journey.",
+  keywords: ["software engineering", "programming", "soft skills", "developer blog", "tech articles", "coding"],
+  openGraph: {
+    title: "Eduardo Vedes' Blog",
+    description: "Thoughts on software development, soft skills, and software engineer's growth.",
+    url: "https://eduardovedes.com/blog",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Eduardo Vedes' Blog",
+    description: "Thoughts on software development, soft skills, and software engineer's growth.",
+  },
+  alternates: {
+    canonical: "https://eduardovedes.com/blog",
+  },
+};
 
 export default function BlogPage() {
   const posts = getAllPosts();

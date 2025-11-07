@@ -108,9 +108,44 @@ export async function generateMetadata({
     };
   }
 
+  const publishedTime = new Date(post.date).toISOString();
+  const absoluteImageUrl = post.image?.startsWith('http')
+    ? post.image
+    : `https://eduardovedes.com${post.image}`;
+
   return {
     title: post.title,
     description: post.description,
+    keywords: post.tags,
+    authors: [{ name: "Eduardo Vedes" }],
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      url: `https://eduardovedes.com/blog/${slug}`,
+      siteName: "Eduardo Vedes",
+      type: "article",
+      publishedTime,
+      authors: ["Eduardo Vedes"],
+      tags: post.tags,
+      images: post.image ? [
+        {
+          url: absoluteImageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      creator: "@eduardovedes",
+      images: post.image ? [absoluteImageUrl] : undefined,
+    },
+    alternates: {
+      canonical: `https://eduardovedes.com/blog/${slug}`,
+    },
   };
 }
 
@@ -126,8 +161,40 @@ export default async function BlogPost({
     notFound();
   }
 
+  const absoluteImageUrl = post.image?.startsWith('http')
+    ? post.image
+    : `https://eduardovedes.com${post.image}`;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description,
+    image: post.image ? absoluteImageUrl : undefined,
+    datePublished: new Date(post.date).toISOString(),
+    author: {
+      "@type": "Person",
+      name: "Eduardo Vedes",
+      url: "https://eduardovedes.com",
+    },
+    publisher: {
+      "@type": "Person",
+      name: "Eduardo Vedes",
+      url: "https://eduardovedes.com",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://eduardovedes.com/blog/${slug}`,
+    },
+    keywords: post.tags?.join(", "),
+  };
+
   return (
     <div className={`min-h-screen bg-white dark:bg-zinc-900 transition-colors duration-300 ${merriweather.className}`}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <article className="max-w-3xl mx-auto px-4 py-16">
         <div className="mb-8">
           <Link
