@@ -3,6 +3,7 @@ import "./globals.css";
 import { JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "./components/ThemeProvider";
 import { ThemeWrapper } from "./components/ThemeWrapper";
+import GoogleAnalytics from "./components/GoogleAnalytics";
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -13,8 +14,16 @@ export const metadata: Metadata = {
     default: "Eduardo Vedes - Indie Hacker & Software Engineer",
     template: "%s | Eduardo Vedes",
   },
-  description: "Indie Hacker building atomize.ink. Software Engineer sharing insights on software development, soft skills, and engineering growth.",
-  keywords: ["Eduardo Vedes", "Software Engineer", "Indie Hacker", "Web Development", "Tech Blog", "atomize.ink"],
+  description:
+    "Indie Hacker building atomize.ink. Software Engineer sharing insights on software development, soft skills, and engineering growth.",
+  keywords: [
+    "Eduardo Vedes",
+    "Software Engineer",
+    "Indie Hacker",
+    "Web Development",
+    "Tech Blog",
+    "atomize.ink",
+  ],
   authors: [{ name: "Eduardo Vedes", url: "https://eduardovedes.com" }],
   creator: "Eduardo Vedes",
   publisher: "Eduardo Vedes",
@@ -26,9 +35,9 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   icons: {
@@ -46,7 +55,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Eduardo Vedes - Indie Hacker & Software Engineer",
-    description: "Indie Hacker building atomize.ink. Software Engineer sharing insights on software development, soft skills, and engineering growth.",
+    description:
+      "Indie Hacker building atomize.ink. Software Engineer sharing insights on software development, soft skills, and engineering growth.",
     url: "https://eduardovedes.com",
     siteName: "Eduardo Vedes",
     locale: "en_US",
@@ -63,7 +73,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Eduardo Vedes - Indie Hacker & Software Engineer",
-    description: "Indie Hacker building atomize.ink. Software Engineer sharing insights on software development, soft skills, and engineering growth.",
+    description:
+      "Indie Hacker building atomize.ink. Software Engineer sharing insights on software development, soft skills, and engineering growth.",
     creator: "@eduardovedes",
     images: ["/profile-pic.png"],
   },
@@ -97,6 +108,7 @@ export default function RootLayout({
       </head>
       <body className={`${jetBrainsMono.className} antialiased`}>
         <ThemeProvider>
+          <GoogleAnalytics />
           <ThemeWrapper>{children}</ThemeWrapper>
         </ThemeProvider>
       </body>
