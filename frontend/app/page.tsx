@@ -14,7 +14,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col h-screen bg-white dark:bg-zinc-900 transition-colors duration-300">
+    <div className="flex flex-col h-screen bg-white dark:bg-zinc-900 transition-colors duration-300 p-2">
       <div
         className={`grow flex flex-col gap-6 sm:gap-8 justify-center items-center transition-all duration-700 ease-out ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
       >
@@ -43,30 +43,46 @@ export default function Home() {
         <div className="text-sm font-semibold text-zinc-700 dark:text-zinc-300">
           eduardo.vedes@gmail.com
         </div>
-        <div className="text-center text-zinc-800 dark:text-zinc-200">
-          ☠️ Indie Hacker building{" "}
+        <div className="text-sm font-semibold text-zinc-700 dark:text-zinc-300 text-center max-w-lg leading-[24px] ">
+          Hi! My name is Edo, and I&apos;m an AI Engineer. I&apos;m also a Software Engineer
+          specialized on the Tyescript ecosystem. I&apos;m indie hacking{" "}
           <Link
             href="https://atomize.ink"
             prefetch={false}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-semibold underline hover:no-underline hover:text-red-600 dark:hover:text-red-400 transition-all duration-300 ease-in-out"
+            className="font-semibold underline hover:no-underline text-red-600 hover:text-red-500 transition-all duration-300 ease-in-out"
           >
             atomize.ink
           </Link>
-        </div>
-
-        <div className="text-center text-zinc-800 dark:text-zinc-200 flex items-center gap-2">
-          ✏️
+          . I share my thoughts on my personal{" "}
           <Link
             href="/blog"
-            className="font-semibold underline hover:no-underline hover:text-red-600 dark:hover:text-red-400 transition-all duration-300 ease-in-out"
+            className="font-semibold underline hover:no-underline text-red-600 hover:text-red-500 transition-all duration-300 ease-in-out"
           >
-            BLOG
+            blog
+          </Link>{" "}
+          and I&apos;m the author of the{" "}
+          <Link
+            href="https://codeyourfuture.substack.com"
+            className="font-semibold underline hover:no-underline text-red-600 hover:text-red-500 transition-all duration-300 ease-in-out"
+          >
+            codeyourfuture
+          </Link>{" "}
+          substack. I&apos;m also the author of the book{" "}
+          <Link
+            href="https://eduardovedes.gumroad.com/l/codeyourfuture"
+            className="font-semibold underline hover:no-underline text-red-600 hover:text-red-500 transition-all duration-300 ease-in-out"
+          >
+            Code Your Future: A Guide to Career Change and Success in Software Engineering
           </Link>
+          .
+        </div>
+        <div className="text-sm font-semibold text-zinc-700 dark:text-zinc-300 text-center max-w-lg leading-[24px]">
+          I love to meet new people, so if you&apos;d like to chat, feel free to reach out!
         </div>
       </div>
-      <div className="flex flex-col gap-4 items-center pb-16">
+      <div className="flex flex-col gap-4 items-center pb-8">
         <div className="flex gap-4 items-center">
           <Link
             href="https://www.linkedin.com/in/evedes/"
