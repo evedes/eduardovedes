@@ -7,6 +7,11 @@ import GoogleAnalytics from "./components/GoogleAnalytics";
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
+  display: "swap",
+  variable: "--font-jetbrains-mono",
+  fallback: ["ui-monospace", "monospace"],
+  adjustFontFallback: true,
+  preload: true,
 });
 
 export const metadata: Metadata = {
