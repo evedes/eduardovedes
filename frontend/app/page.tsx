@@ -21,7 +21,7 @@ export default function Home() {
         <div className="hidden sm:block">
           <Image
             src="/profile-pic.png"
-            className="rounded-full shadow-xl"
+            className="rounded-full shadow-xl border-2 shadow-xl border-zinc-300 dark:border-zinc-800"
             alt="Eduardo Vedes"
             priority
             width={180}
@@ -58,6 +58,8 @@ export default function Home() {
           . I share my thoughts on my personal{" "}
           <Link
             href="/blog"
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-semibold underline hover:no-underline text-red-600 hover:text-red-500 transition-all duration-300 ease-in-out"
           >
             blog
@@ -65,6 +67,8 @@ export default function Home() {
           and I&apos;m the author of the{" "}
           <Link
             href="https://codeyourfuture.substack.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-semibold underline hover:no-underline text-red-600 hover:text-red-500 transition-all duration-300 ease-in-out"
           >
             codeyourfuture
