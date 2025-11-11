@@ -1,8 +1,8 @@
 import Link from "next/link";
-import Image from "next/image";
 import { getAllPosts } from "@/lib/blog";
 import { Merriweather } from "next/font/google";
 import type { Metadata } from "next";
+import BlogPostImage from "@/app/components/BlogPostImage";
 
 const merriweather = Merriweather({
   weight: ["300", "400", "700"],
@@ -65,14 +65,7 @@ export default function BlogPage() {
               >
                 {post.image && (
                   <Link href={`/blog/${post.slug}`} className="block mb-4">
-                    <div className="relative w-full h-64 overflow-hidden rounded-lg">
-                      <Image
-                        src={post.image}
-                        alt={post.title}
-                        fill
-                        className="object-cover hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
+                    <BlogPostImage src={post.image} alt={post.title} />
                   </Link>
                 )}
                 <Link href={`/blog/${post.slug}`}>
