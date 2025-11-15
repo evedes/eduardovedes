@@ -16,3 +16,49 @@
     --foreground: 255 255 255;
   }
 }
+
+/* Enhanced code block styling */
+@layer components {
+  pre code {
+    @apply text-zinc-100 text-base leading-relaxed;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  }
+
+  pre {
+    @apply text-zinc-100;
+    line-height: 1.7;
+  }
+
+  /* Enhance syntax highlighting colors for better visibility */
+  pre .hljs-keyword,
+  pre .hljs-selector-tag,
+  pre .hljs-literal,
+  pre .hljs-section,
+  pre .hljs-link {
+    @apply text-blue-400 font-semibold;
+  }
+
+  pre .hljs-string {
+    @apply text-green-400;
+  }
+
+  pre .hljs-comment {
+    @apply text-zinc-500 italic;
+  }
+
+  pre .hljs-number,
+  pre .hljs-regexp,
+  pre .hljs-tag .hljs-attr {
+    @apply text-orange-400;
+  }
+
+  pre .hljs-title,
+  pre .hljs-attribute {
+    @apply text-yellow-300;
+  }
+
+  pre .hljs-variable,
+  pre .hljs-template-variable {
+    @apply text-purple-400;
+  }
+}
