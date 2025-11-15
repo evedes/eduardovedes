@@ -1,5 +1,5 @@
-/* Syntax highlighting for code blocks */
-@import "highlight.js/styles/github-dark.min.css";
+/* Syntax highlighting for code blocks - light theme for light mode */
+@import "highlight.js/styles/github.min.css";
 
 @tailwind base;
 @tailwind components;
@@ -17,48 +17,92 @@
   }
 }
 
-/* Enhanced code block styling */
+/* Enhanced code block styling with light/dark mode support */
 @layer components {
+  /* Light mode code blocks */
   pre code {
-    @apply text-zinc-100 text-base leading-relaxed;
+    @apply text-zinc-900 text-base leading-relaxed;
     font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
   }
 
   pre {
-    @apply text-zinc-100;
+    @apply text-zinc-900;
     line-height: 1.7;
   }
 
-  /* Enhance syntax highlighting colors for better visibility */
+  /* Dark mode code blocks */
+  .dark pre code {
+    @apply text-zinc-100;
+  }
+
+  .dark pre {
+    @apply text-zinc-100;
+  }
+
+
+  /* Light mode syntax highlighting colors */
   pre .hljs-keyword,
   pre .hljs-selector-tag,
   pre .hljs-literal,
   pre .hljs-section,
   pre .hljs-link {
-    @apply text-blue-400 font-semibold;
+    @apply text-blue-600 font-semibold;
   }
 
   pre .hljs-string {
-    @apply text-green-400;
+    @apply text-green-600;
   }
 
   pre .hljs-comment {
-    @apply text-zinc-500 italic;
+    @apply text-zinc-400 italic;
   }
 
   pre .hljs-number,
   pre .hljs-regexp,
   pre .hljs-tag .hljs-attr {
-    @apply text-orange-400;
+    @apply text-orange-600;
   }
 
   pre .hljs-title,
   pre .hljs-attribute {
-    @apply text-yellow-300;
+    @apply text-yellow-700;
   }
 
   pre .hljs-variable,
   pre .hljs-template-variable {
+    @apply text-purple-600;
+  }
+
+  /* Dark mode syntax highlighting colors */
+  .dark pre .hljs-keyword,
+  .dark pre .hljs-selector-tag,
+  .dark pre .hljs-literal,
+  .dark pre .hljs-section,
+  .dark pre .hljs-link {
+    @apply text-blue-400 font-semibold;
+  }
+
+  .dark pre .hljs-string {
+    @apply text-green-400;
+  }
+
+  .dark pre .hljs-comment {
+    @apply text-zinc-500 italic;
+  }
+
+  .dark pre .hljs-number,
+  .dark pre .hljs-regexp,
+  .dark pre .hljs-tag .hljs-attr {
+    @apply text-orange-400;
+  }
+
+  .dark pre .hljs-title,
+  .dark pre .hljs-attribute {
+    @apply text-yellow-300;
+  }
+
+  .dark pre .hljs-variable,
+  .dark pre .hljs-template-variable {
     @apply text-purple-400;
   }
 }
