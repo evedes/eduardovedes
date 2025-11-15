@@ -1,4 +1,4 @@
-name: Deploy to DigitalOcean
+name: Deploy to Batman Server
 
 on:
   push:
@@ -45,21 +45,28 @@ jobs:
       - name: Checkout code (for access to docker-compose-eduardovedes.yaml)
         uses: actions/checkout@v4
 
-      - name: Copy docker-compose-eduardovedes.yaml to Digital Ocean Droplet
+      - name: Connect to Tailscale
+        uses: tailscale/github-action@v2
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:batman-ci
+
+      - name: Copy docker-compose-eduardovedes.yaml to Batman Server
         uses: appleboy/scp-action@v0.1.7
         with:
           source: "docker-compose-eduardovedes.yaml"
-          target: /home/${{ secrets.DROPLET_USER}}/
-          host: ${{ secrets.DROPLET_IP }}
-          username: ${{ secrets.DROPLET_USER }}
-          key: ${{ secrets.DROPLET_SSH_KEY }}
+          target: /home/${{ secrets.BATMAN_SERVER_USER}}/
+          host: ${{ secrets.BATMAN_SERVER_IP }}
+          username: ${{ secrets.BATMAN_SERVER_USER }}
+          key: ${{ secrets.BATMAN_SERVER_SSH_KEY }}
 
-      - name: Deploy to DigitalOcean Droplet
+      - name: Deploy to Batman Server
         uses: appleboy/ssh-action@v0.1.0
         with:
-          host: ${{ secrets.DROPLET_IP }}
-          username: ${{ secrets.DROPLET_USER }}
-          key: ${{ secrets.DROPLET_SSH_KEY }}
+          host: ${{ secrets.BATMAN_SERVER_IP }}
+          username: ${{ secrets.BATMAN_SERVER_USER }}
+          key: ${{ secrets.BATMAN_SERVER_SSH_KEY }}
           port: 22
           script: |
             echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
@@ -68,12 +75,12 @@ jobs:
             docker compose -f docker-compose-eduardovedes.yaml up -d
             docker compose -f docker-compose-reverseproxy.yaml restart
 
-      - name: List and remove non-latest images in Digital Ocean Droplet
+      - name: List and remove non-latest images on Batman Server
         uses: appleboy/ssh-action@v0.1.0
         with:
-          host: ${{ secrets.DROPLET_IP }}
-          username: ${{ secrets.DROPLET_USER }}
-          key: ${{ secrets.DROPLET_SSH_KEY }}
+          host: ${{ secrets.BATMAN_SERVER_IP }}
+          username: ${{ secrets.BATMAN_SERVER_USER }}
+          key: ${{ secrets.BATMAN_SERVER_SSH_KEY }}
           port: 22
           script: |
             images=$(docker images --format '{{.Repository}}:{{.Tag}} {{.ID}}' | grep -v ':latest')
