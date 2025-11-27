@@ -38,15 +38,15 @@ export function Projects() {
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group flex flex-col p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 bg-white dark:bg-zinc-900/50 transition-all duration-300 hover:shadow-md h-full"
+                        className="group flex flex-col p-4 rounded-xl border border-zinc-200/50 dark:border-zinc-700/50 bg-white/70 dark:bg-zinc-900/70 backdrop-blur-xl backdrop-saturate-150 hover:bg-white/80 dark:hover:bg-zinc-900/80 transition-all duration-300 hover:shadow-lg hover:shadow-zinc-200/50 dark:hover:shadow-zinc-900/50 h-full"
                     >
                         <div className="flex items-center gap-3 mb-2">
                             <project.icon className={`size-5 ${project.color} shrink-0`} />
-                            <h3 className="font-semibold text-zinc-800 dark:text-zinc-100 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
+                            <h3 className="font-semibold text-zinc-800 dark:text-zinc-100 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                                 {project.title}
                             </h3>
                         </div>
-                        <p className="text-sm text-zinc-600 dark:text-zinc-400 flex-grow">
+                        <p className="text-base text-zinc-600 dark:text-zinc-400 flex-grow">
                             {project.description}
                         </p>
                     </Link>
