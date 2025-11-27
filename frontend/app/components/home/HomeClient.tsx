@@ -7,6 +7,7 @@ import { SocialLinks } from "./SocialLinks";
 import { Projects } from "./Projects";
 import { LatestPosts } from "./LatestPosts";
 import { BlogPost } from "@/lib/blog";
+import { AnimatedBackground } from "../AnimatedBackground";
 
 interface HomeClientProps {
     posts: BlogPost[];
@@ -14,7 +15,8 @@ interface HomeClientProps {
 
 export function HomeClient({ posts }: HomeClientProps) {
     return (
-        <div className="min-h-screen bg-white dark:bg-zinc-900 transition-colors duration-300 p-4 sm:p-8 overflow-x-hidden">
+        <div className="min-h-screen relative transition-colors duration-300 p-4 sm:p-8 overflow-x-hidden">
+            <AnimatedBackground />
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
