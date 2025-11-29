@@ -2,33 +2,36 @@ import Image from "next/image";
 
 export function ProfileHeader() {
   return (
-    <div className="flex flex-col items-center gap-4">
-      <div className="hidden sm:block relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full blur-2xl" />
-        <Image
-          src="/profile-pic.png"
-          className="relative rounded-full border-2 shadow-2xl border-white/50 dark:border-zinc-700/50 ring-1 ring-zinc-200/50 dark:ring-zinc-800/50"
-          alt="Eduardo Vedes"
-          priority
-          width={180}
-          height={180}
-        />
+    <div className="flex flex-col items-center gap-6">
+      <div className="relative group">
+        <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-500 to-primary-800 rounded-full opacity-50 group-hover:opacity-100 transition duration-500 blur-sm"></div>
+        <div className="relative">
+          <Image
+            src="/profile-pic.png"
+            className="rounded-full border-4 border-background bg-zinc-800"
+            alt="Eduardo Vedes"
+            priority
+            width={140}
+            height={140}
+          />
+        </div>
       </div>
-      <div className="block sm:hidden relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full blur-xl" />
-        <Image
-          src="/profile-pic.png"
-          className="relative rounded-full shadow-2xl ring-1 ring-zinc-200/50 dark:ring-zinc-800/50"
-          alt="Eduardo Vedes"
-          width={100}
-          height={100}
-        />
-      </div>
-      <h1 className="text-2xl sm:text-4xl font-bold text-zinc-800 dark:text-zinc-100">
-        Eduardo Vedes
-      </h1>
-      <div className="text-base font-semibold text-zinc-700 dark:text-zinc-300">
-        eduardo.vedes@gmail.com
+
+      <div className="text-center space-y-3">
+        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
+          Eduardo Vedes
+        </h1>
+        <div className="flex flex-col items-center gap-1">
+          <p className="font-mono text-primary-500 text-sm sm:text-base font-medium">
+            Software Engineer & Indie Hacker
+          </p>
+          <a
+            href="mailto:eduardo.vedes@gmail.com"
+            className="text-zinc-500 dark:text-zinc-400 text-sm hover:text-primary-500 transition-colors"
+          >
+            eduardo.vedes@gmail.com
+          </a>
+        </div>
       </div>
     </div>
   );

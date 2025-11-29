@@ -4,47 +4,47 @@ import { SiSubstack } from "react-icons/si";
 
 export function SocialLinks() {
     return (
-        <div className="flex flex-col gap-4 items-center pb-8">
-            <div className="flex gap-4 items-center">
+        <div className="flex flex-col gap-6 items-center pb-8">
+            <div className="flex items-center gap-2 p-1.5 rounded-full border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-800/50 backdrop-blur-sm shadow-sm">
                 <Link
                     href="https://www.linkedin.com/in/evedes/"
-                    prefetch={false}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="p-3 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-zinc-800 dark:text-zinc-400 hover:text-primary-600 dark:hover:text-primary-400"
                     aria-label="LinkedIn"
                 >
-                    <FaLinkedin className="size-6 text-zinc-600 dark:text-zinc-400 hover:text-[#0866C2] dark:hover:text-[#0866C2] transition-colors duration-300 ease-in-out" />
+                    <FaLinkedin className="size-5" />
                 </Link>
                 <Link
                     href="https://github.com/evedes"
-                    prefetch={false}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="p-3 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-zinc-800 dark:text-zinc-400 hover:text-primary-600 dark:hover:text-primary-400"
                     aria-label="GitHub"
                 >
-                    <FaGithub className="size-6 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-300 ease-in-out" />
+                    <FaGithub className="size-5" />
                 </Link>
                 <Link
                     href="https://x.com/eduardovedes"
-                    prefetch={false}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="p-3 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-zinc-800 dark:text-zinc-400 hover:text-primary-600 dark:hover:text-primary-400"
                     aria-label="Twitter / X"
                 >
-                    <FaXTwitter className="size-6 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-300 ease-in-out" />
+                    <FaXTwitter className="size-5" />
                 </Link>
                 <Link
                     href="https://codeyourfuture.substack.com"
-                    prefetch={false}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="p-3 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-zinc-800 dark:text-zinc-400 hover:text-primary-600 dark:hover:text-primary-400"
                     aria-label="Substack"
                 >
-                    <SiSubstack className="size-6 text-zinc-600 dark:text-zinc-400 hover:text-[#FF6719] dark:hover:text-[#FF6719] transition-colors duration-300 ease-in-out" />
+                    <SiSubstack className="size-5" />
                 </Link>
             </div>
-            <div className="text-xs text-zinc-600 dark:text-zinc-400">
-                2025 &copy; All Rights Reserved
+            <div className="text-xs font-mono text-zinc-400 dark:text-zinc-800">
+                © {new Date().getFullYear()} Eduardo Vedes
             </div>
         </div>
     );

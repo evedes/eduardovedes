@@ -41,7 +41,7 @@ export default function BlogPage() {
         <div className="mb-12">
           <Link
             href="/"
-            className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+            className="text-sm text-zinc-800 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
           >
             ← Back to home
           </Link>
@@ -50,12 +50,12 @@ export default function BlogPage() {
         <h1 className="text-4xl sm:text-5xl font-bold text-zinc-900 dark:text-zinc-100 mb-4">
           Eduardo Vedes&apos; Blog
         </h1>
-        <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-12">
+        <p className="text-lg text-zinc-800 dark:text-zinc-400 mb-12">
           Thoughts on software and software engineer&apos;s growth.
         </p>
 
         {posts.length === 0 ? (
-          <p className="text-zinc-600 dark:text-zinc-400">No blog posts yet. Check back soon!</p>
+          <p className="text-zinc-800 dark:text-zinc-400">No blog posts yet. Check back soon!</p>
         ) : (
           <div className="space-y-8">
             {posts.map((post) => (
@@ -73,7 +73,7 @@ export default function BlogPage() {
                     {post.title}
                   </h2>
                 </Link>
-                <div className="flex items-center gap-4 text-sm text-zinc-600 dark:text-zinc-400 mb-3">
+                <div className="flex items-center gap-4 text-sm text-zinc-800 dark:text-zinc-400 mb-3">
                   <time dateTime={post.date}>
                     {new Date(post.date).toLocaleDateString("en-US", {
                       year: "numeric",

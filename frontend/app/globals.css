@@ -7,18 +7,33 @@
 
 @layer base {
   :root {
-    --background: 255 255 255;
-    --foreground: 0 0 0;
+    --background: #ffffff;
+    --foreground: #18181b;
   }
 
   .dark {
-    --background: 24 24 27;
-    --foreground: 255 255 255;
+    --background: #18181b;
+    --foreground: #fafafa;
+  }
+}
+
+@layer utilities {
+  .bg-grid-black {
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  }
+
+  .bg-grid-white {
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   }
 }
 
 /* Enhanced code block styling with light/dark mode support */
 @layer components {
+
   /* Light mode code blocks */
   pre code {
     @apply text-zinc-900 text-base leading-relaxed;
@@ -105,36 +120,4 @@
   .dark pre .hljs-template-variable {
     @apply text-purple-400;
   }
-}
-
-/* Animated gradient blob animations */
-@keyframes blob {
-  0% {
-    transform: translate(0px, 0px) scale(1);
-  }
-  33% {
-    transform: translate(30px, -50px) scale(1.1);
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-  100% {
-    transform: translate(0px, 0px) scale(1);
-  }
-}
-
-.animate-blob {
-  animation: blob 7s infinite;
-}
-
-.animation-delay-2000 {
-  animation-delay: 2s;
-}
-
-.animation-delay-4000 {
-  animation-delay: 4s;
-}
-
-.animation-delay-6000 {
-  animation-delay: 6s;
 }

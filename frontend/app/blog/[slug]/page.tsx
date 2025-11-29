@@ -72,7 +72,7 @@ const mdxComponents = {
   ),
   blockquote: (props: ComponentPropsWithoutRef<"blockquote">) => (
     <blockquote
-      className="border-l-4 border-zinc-300 dark:border-zinc-700 pl-4 italic text-zinc-600 dark:text-zinc-400 mb-4"
+      className="border-l-4 border-zinc-300 dark:border-zinc-700 pl-4 italic text-zinc-800 dark:text-zinc-400 mb-4"
       {...props}
     />
   ),
@@ -199,7 +199,7 @@ export default async function BlogPost({
         <div className="mb-8">
           <Link
             href="/blog"
-            className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+            className="text-sm text-zinc-800 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
           >
             ← Back to blog
           </Link>
@@ -209,7 +209,7 @@ export default async function BlogPost({
           <h1 className="text-4xl sm:text-5xl font-bold text-zinc-900 dark:text-zinc-100 mb-4">
             {post.title}
           </h1>
-          <div className="flex items-center gap-4 text-sm text-zinc-600 dark:text-zinc-400 mb-4">
+          <div className="flex items-center gap-4 text-sm text-zinc-800 dark:text-zinc-400 mb-4">
             <time dateTime={post.date}>
               {new Date(post.date).toLocaleDateString("en-US", {
                 year: "numeric",

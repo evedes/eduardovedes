@@ -1,60 +1,44 @@
 import Link from "next/link";
 
 export function Bio() {
-    return (
-        <div className="flex flex-col items-center gap-4">
-            <div className="text-base font-semibold text-zinc-700 dark:text-zinc-300 text-center max-w-lg leading-[24px] flex flex-col gap-4">
-                <div>
-                    Hi! My name is Edo, and I&apos;m an AI + Software Engineer specialized on the Tyescript ecosystem.
-                </div>
-                <div>
-                    I&apos;m indie hacking{" "}
-                    <Link
-                        href="https://atomize.ink"
-                        prefetch={false}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-semibold underline hover:no-underline text-purple-600 hover:text-purple-500 dark:text-purple-400 dark:hover:text-purple-300 transition-all duration-300 ease-in-out"
-                    >
-                        atomize.ink
-                    </Link>
-                    .
-                </div>
-                <div>
-                    I share my thoughts on my personal{" "}
-                    <Link
-                        href="/blog"
-                        className="font-semibold underline hover:no-underline text-purple-600 hover:text-purple-500 dark:text-purple-400 dark:hover:text-purple-300 transition-all duration-300 ease-in-out"
-                    >
-                        blog
-                    </Link>{" "}
-                    and I&apos;m the author of the{" "}
-                    <Link
-                        href="https://codeyourfuture.substack.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-semibold underline hover:no-underline text-purple-600 hover:text-purple-500 dark:text-purple-400 dark:hover:text-purple-300 transition-all duration-300 ease-in-out"
-                    >
-                        codeyourfuture
-                    </Link>{" "}
-                    substack.
-                </div>
-                <div>
-                    I&apos;m also the author of the book{" "}
-                    <Link
-                        href="https://eduardovedes.gumroad.com/l/codeyourfuture"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-semibold underline hover:no-underline text-purple-600 hover:text-purple-500 dark:text-purple-400 dark:hover:text-purple-300 transition-all duration-300 ease-in-out"
-                    >
-                        Code Your Future: A Guide to Career Change and Success in Software Engineering
-                    </Link>
-                    .
-                </div>
-            </div>
-            <div className="text-base font-semibold text-zinc-700 dark:text-zinc-300 text-center max-w-lg leading-[24px]">
-                I love to meet new people, so if you&apos;d like to chat, feel free to reach out!
-            </div>
-        </div>
-    );
+  return (
+    <div className="flex flex-col items-center gap-6 max-w-2xl mx-auto px-4">
+      <div className="text-lg text-zinc-800 dark:text-zinc-300 text-center leading-relaxed space-y-4 font-light">
+        <p>
+          Hi! I&apos;m <span className="font-semibold text-foreground">Edo</span>, an AI + Software Engineer specialized in the <span className="font-mono text-sm text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20 px-1 py-0.5 rounded">TypeScript</span> ecosystem.
+        </p>
+        <p>
+          I&apos;m currently building{" "}
+          <Link
+            href="https://atomize.ink"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-foreground border-b border-primary-500 hover:border-b-2 transition-all"
+          >
+            atomize.ink
+          </Link>
+          {" "}and writing about engineering growth on my{" "}
+          <Link
+            href="/blog"
+            className="font-medium text-foreground border-b border-primary-500 hover:border-b-2 transition-all"
+          >
+            blog
+          </Link>
+          .
+        </p>
+        <p>
+          Author of{" "}
+          <Link
+            href="https://eduardovedes.gumroad.com/l/codeyourfuture"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-foreground border-b border-primary-500 hover:border-b-2 transition-all"
+          >
+            Code Your Future
+          </Link>
+          , a guide to career success in software engineering.
+        </p>
+      </div>
+    </div>
+  );
 }

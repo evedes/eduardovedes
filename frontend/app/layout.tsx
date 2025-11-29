@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { JetBrains_Mono } from "next/font/google";
+import { JetBrains_Mono, Inter } from "next/font/google";
 import { ThemeProvider } from "./components/ThemeProvider";
 import { ThemeWrapper } from "./components/ThemeWrapper";
 import GoogleAnalytics from "./components/GoogleAnalytics";
@@ -10,6 +10,15 @@ const jetBrainsMono = JetBrains_Mono({
   display: "swap",
   variable: "--font-jetbrains-mono",
   fallback: ["ui-monospace", "monospace"],
+  adjustFontFallback: true,
+  preload: true,
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+  fallback: ["system-ui", "sans-serif"],
   adjustFontFallback: true,
   preload: true,
 });
@@ -111,7 +120,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${jetBrainsMono.className} antialiased`}>
+      <body className={`${jetBrainsMono.variable} ${inter.variable} font-sans antialiased`}>
         <ThemeProvider>
           <GoogleAnalytics />
           <ThemeWrapper>{children}</ThemeWrapper>
