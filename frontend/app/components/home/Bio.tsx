@@ -5,7 +5,7 @@ export function Bio() {
     <div className="flex flex-col items-center gap-6 max-w-2xl mx-auto px-4">
       <div className="text-lg text-zinc-800 dark:text-zinc-300 text-center leading-relaxed space-y-4 font-light">
         <p>
-          Hi! I&apos;m <span className="font-semibold text-foreground">Edo</span>, an AI + Software Engineer specialized in the <span className="font-mono text-sm text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20 px-1 py-0.5 rounded">TypeScript</span> ecosystem.
+          Hi! I&apos;m <span className="font-semibold text-foreground">Edo</span>, an AI + Software Engineer.
         </p>
         <p>
           I&apos;m currently building{" "}
@@ -36,7 +36,7 @@ export function Bio() {
           >
             Code Your Future
           </Link>
-          , a guide to career success in software engineering.
+          , a guide to career change and success in software engineering.
         </p>
       </div>
     </div>
