@@ -1,0 +1,108 @@
+---
+title: "How I Built an AI CLI Tool with GitHub Copilot in 80 Requests"
+date: "2025-11-30"
+description: ""
+tags: ["ai", "ai culture", "ai for business", "ai for developers", "artificial intelligence", "learning ai", "business", "culture", "developers", "ethics", "leadership", "management", "organization", "remote work", "sustainability", "teams"]
+---
+
+![How I Built an AI CLI Tool with GitHub Copilot in 80 Requests](/blog/how-i-built-an-ai-cli-tool.png)
+
+I've spent most of 2025 using Claude Code as my primary AI coding assistant. The results have been impressive—it fundamentally changed how I approach complex coding tasks. But curiosity got the better of me. I wanted to see how much GitHub Copilot has evolved, so I decided to put it through a real challenge: building a complete AI CLI tool from scratch.
+
+The result surprised me. Not just because of what I built, but because of *how* I built it.
+
+### The Challenge
+
+I set myself a concrete goal: build a command-line tool that uses the Anthropic API with these requirements:
+
+- Basic conversation history
+- Cost tracking (token counting and cost per query)
+- Production-grade error handling with retry logic and exponential backoff
+
+This isn't a toy project. It's the kind of tool that teaches you the fundamentals of working with LLM APIs—token management, error handling, and the unglamorous but essential work of making software reliable.
+
+### My Approach: Agents All the Way Down
+
+Here's where things get interesting. Instead of jumping straight into code, I started by creating a **technical writer agent**. You can see it [on GitHub](https://github.com/evedes/ai-client-tool/blob/main/.github/agents/technical-writer.agent.md).
+
+With this agent, I created a [complete specification](https://github.com/evedes/ai-client-tool/blob/main/specs/cli-tool-spec.md) for the application. We ended up with 5 phases and manageable tickets per phase—digestible chunks that made execution predictable.
+
+Then I created specialized agents for different contexts:
+
+1. **Project Architect** — for high-level design decisions
+2. **Backend Engineer** — for API integration and business logic
+3. **Frontend Engineer** — for the Ink-based UI
+4. **CLI Developer** — for command-line argument parsing and UX
+5. **DevOps Engineer** — for build, test, and deployment concerns
+6. **QA Engineer** — for testing strategy and quality assurance
+
+My workflow was simple: create GitHub issues, then interact with the project architect and relevant specialized agents to implement features. The separation of concerns wasn't just organizational—it helped Copilot maintain focused context for each type of work.
+
+### The Five Phases
+
+We executed the project across five distinct phases:
+
+**Phase 1: Foundation (MVP)** 🎯
+Basic CLI structure, Anthropic API integration, and a working conversation loop.
+
+**Phase 2: Resilience & Cost Tracking** 💰
+This is where production thinking kicks in. Retry logic with exponential backoff, proper error handling, and token counting with cost calculation.
+
+**Phase 3: Conversation History** 💬
+Implementing conversation context so the AI remembers what you discussed.
+
+**Phase 4: Rich UI with Ink** 🎨
+Moving from basic stdout to a proper terminal UI using Ink (React for CLIs).
+
+**Phase 5: Persistence & Advanced Features** 🚀
+Saving conversations, configuration management, and polish.
+
+We finished with tests, documentation, and the kind of refinement that separates a script from a tool.
+
+### The Surprising Part
+
+**The app worked on the first try.**
+
+I don't mean "it compiled." I mean the complete application—API integration, error handling, UI, persistence—all of it worked when I first ran it end-to-end.
+
+This isn't luck. It's the result of two things:
+
+1. **Detailed upfront specification.** The technical writer agent forced me to think through edge cases before writing code. Most bugs come from unclear requirements, not coding mistakes.
+
+2. **Specialized agent contexts.** Each agent had a focused role. The backend engineer wasn't distracted by UI concerns. The QA engineer could focus purely on testing strategy. This mirrors how effective engineering teams work.
+
+### What I Learned About GitHub Copilot
+
+Copilot has evolved significantly. The agent-based approach—where you define specialized personas with specific contexts—transforms it from a code completion tool into something closer to a collaborative development environment.
+
+The key insight: **Copilot is as good as the structure you give it.** Vague prompts produce vague code. Detailed specifications with clear context boundaries produce working software.
+
+### The Numbers
+
+- **~80 premium requests to sonnet 4.5** to build the complete application
+- **5 phases** of structured development
+- **6 specialized agents** for different concerns
+- **1 technical writer agent** that arguably did the most important work
+
+### Should You Try This?
+
+If you're curious about AI-assisted development, building a CLI tool that talks to an LLM API is an excellent learning project. You'll understand:
+
+- How token counting and cost tracking actually work
+- Why retry logic matters (API calls fail more than you'd expect)
+- The value of structured error handling
+- How to build maintainable CLI applications
+
+The agent-based approach scales beyond this project. Any complex task benefits from separating concerns into specialized contexts. It's the same principle that makes microservices and modular architectures work—focused responsibility produces better outcomes.
+
+### Final Thoughts
+
+A year ago, I would have estimated this project at 10 days of focused work. With AI assistance and proper upfront structure, it took roughly 80 interactions spread across 3 hours of focused sessions.
+
+The tools are getting better. But more importantly, we're learning how to use them effectively. The agent-based approach isn't just a GitHub Copilot feature—it's a mental model for decomposing problems that works regardless of which AI tool you're using.
+
+The code is [open source](https://github.com/evedes/ai-client-tool). Try building your own. The learning is in the doing.
+
+---
+
+*This post was written based on my experience building [ai-client-tool](https://github.com/evedes/ai-client-tool) using GitHub Copilot with the Anthropic API.*
