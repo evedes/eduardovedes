@@ -1,0 +1,145 @@
+---
+title: "The Pull Request as a Teaching Tool"
+date: "2025-12-20"
+description: ""
+tags: ["ai", "tdd", "testing", "productivity", "coding", "programming", "software engineering"]
+---
+
+![Testing in the AI Era](/blog/pull-request-as-teaching-tool.png)
+
+# The Pull Request as a Teaching Tool
+
+Hey friends! 👋🏻 It's Edo from Code Your Future!
+
+Thank you so much for subscribing to this digest!
+
+I really appreciate your support and your time. 🙏🏻
+
+This is the 20th edition of Code Your Future Digest, and today we're tackling the massive missed opportunity hiding in your GitHub notifications.
+
+**The primary value of a Pull Request is not the code being merged into the main branch.**
+
+If that sounds ridiculous to you, it’s because we’ve been conditioned to view software development purely as a production line. We think the goal is shipping features.
+
+But here is the reality: **Code is a liability. Understanding is the asset.**
+
+If you merge perfect code but the author (and the team) doesn't understand *why* it's structured that way, you haven't just shipped a feature. You've accrued **Knowledge Debt**. You've built a silo where only one person knows how the machine works, and everyone else is just pushing buttons.
+
+Most people make one critical mistake: **They treat Code Review as a Gatekeeping Compliance Step.**
+
+They fail because they focus on *correctness* instead of *growth*. They hunt for bugs, nitpick formatting, and drop a quick "LGTM" to clear their queue. This turns the PR process into a bureaucratic tax—a painful bottleneck that slows everyone down and teaches no one anything.
+
+## The "Fix This" Trap
+
+I once worked with a brilliant Senior Engineer—let’s call him John. John was a 10x developer. He could spot a race condition from a mile away.
+
+When a Junior developer, Sarah, submitted a PR, John would descend upon it. He would leave 50 comments.
+- "Change this loop to a map."
+- "Move this logic to the service layer."
+- "Variable name is wrong."
+
+Sarah would dutifully make every single change. The code that got merged was excellent. It was efficient, clean, and bug-free.
+
+But three weeks later, Sarah submitted another PR with the *exact same architectural mistakes*.
+
+Why? Because Alex wasn't teaching; he was remote-controlling Sarah. He was using her hands to type his code. Sarah wasn't learning *why* a map was better or *why* the service layer was the right place. She was just trying to get approval.
+
+Alex was optimizing for the code, not the coder. And in doing so, he ensured he would always be the bottleneck.
+
+## The Framework: The Pyramid of Review Impact
+
+To move from gatekeeping to teaching, we need to rethink what we’re looking for. Use this hierarchy to assess your code review habits:
+
+### Level 1: Compliance (The Basement) 🤖
+*Focus:* Formatting, indentation, import sorting, syntax style.
+*Value:* Negative. Humans should not be doing this.
+*Action:* If you are commenting on whitespace, you have failed. Automate this with Prettier/ESLint/Ruff.
+
+### Level 2: Correctness (The Baseline) ✅
+*Focus:* Logic errors, bugs, edge cases, requirements not met.
+*Value:* Neutral. This is the minimum bar to keep the lights on.
+*Action:* Catching bugs is good, but it doesn't help the author avoid them next time unless you explain the root cause.
+
+### Level 3: Maintainability (The Standard) 🏗️
+*Focus:* Design patterns, readability, modularity, naming.
+*Value:* High. This keeps the codebase healthy.
+*Action:* Explaining "This is hard to read" helps, but it's subjective.
+
+### Level 4: Education (The Goal) 🧠
+*Focus:* Transferring mental models, explaining trade-offs, building intuition.
+*Value:* Infinite. This multiplies your leverage.
+*Action:* You explain the *principles* behind the patterns. You ask questions that force the author to derive the answer themselves.
+
+## Actionable Tactics: How to Teach in a PR
+
+Here is how you shift from Level 2 to Level 4.
+
+### 1. The "Why" Rule
+Never request a change without explaining the principle behind it. If you can't articulate *why* your way is better, maybe it's just a preference (and therefore shouldn't be a blocker).
+
+**Wrong:** "Move this to a utility function."
+**Right:** "This logic is duplicated in `UserController`. Let's extract this to a utility function to ensure we don't fix a bug in one place and miss it in the other (DRY principle)."
+
+### 2. The Socratic Code Review
+Instead of giving the answer, ask the question that leads them to it. This forces the author to run the mental simulation themselves.
+
+**Wrong:** "You need a null check here."
+**Right:** "What happens if the API returns a 404 and `user` is undefined here?"
+
+### 3. Link to the Literature
+Don't write a novel in the comment box. If you are referencing a standard pattern or a library feature, link to the documentation or a blog post.
+
+**Right:** "This looks like a good use case for the Strategy Pattern. It would allow us to swap payment providers easily later. Here is a quick read on how that works: [Link]."
+
+### 4. Distinguish "Blocking" from "Learning"
+I use a simple prefix system:
+- **[BLOCKER]:** This will break production. Must fix.
+- **[NIT]:** Tiny style thing, feel free to ignore.
+- **[SUGGESTION]:** A better way to do it, but not critical for this PR.
+- **[QUESTION]:** I don't understand this, please explain.
+
+This reduces the anxiety for the Junior developer. They know they don't have to agree with everything to get merged.
+
+## Comparative Examples
+
+Let's look at the difference between a "Gatekeeper" and a "Teacher."
+
+### Scenario: A database query inside a loop.
+
+**❌ The Gatekeeper:**
+> "N+1 problem. Fix this."
+
+*Result:* The Junior feels stupid, changes it mechanically, and doesn't understand the performance implication.
+
+**✅ The Teacher:**
+> "I see we're fetching comments for each post inside this loop. This will trigger a separate database query for every single post (the N+1 problem), which will kill our performance if we have 50 posts.
+>
+> Can we look into using `.includes(:comments)` (if Rails) or a batch loader here to fetch them all in one query?
+>
+> Here is a great article on why N+1s happen: [Link]"
+
+*Result:* The Junior learns about database performance, fixes it, and knows what to look for next time.
+
+## This Week's Actions
+
+1.  **Audit your last 3 PR reviews.** Count how many comments were Level 1 (formatting) vs Level 4 (teaching). If you find any formatting comments, set up a linter immediately.
+2.  **Try the Socratic Method.** In your next review, find one bug and instead of pointing it out, ask the question that reveals it.
+3.  **Add a "Why".** For every change request you make this week, force yourself to add a "because..." clause.
+
+## Key Takeaways
+
+- **PRs are for people, not code.** Use them to align mental models.
+- **Automate compliance.** Humans shouldn't review what a machine can fix.
+- **Stop remote-controlling.** If you dictate the code, you own the code forever.
+- **Ask, don't tell.** Socratic questions build neural pathways; commands just build dependence.
+- **Explain the "Why".** Context is the difference between a command and a lesson.
+
+That's it for today! 🎉
+
+I'd love to hear your horror stories (or success stories) about code reviews. Have you ever had a mentor who changed your career through PR comments?
+
+Reply to this email or find me on X/LinkedIn.
+
+Thanks, and a happy journey to you! ❤️
+
+Edo ✌🏻
