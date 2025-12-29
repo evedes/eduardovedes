@@ -219,6 +219,8 @@ export default async function BlogPost({
             </time>
             <span>•</span>
             <span>{post.readingTime}</span>
+            <span>•</span>
+            <span>{post.wordCount.toLocaleString()} words</span>
           </div>
           {post.tags && post.tags.length > 0 && (
             <div className="flex gap-2 flex-wrap">

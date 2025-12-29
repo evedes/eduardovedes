@@ -12,6 +12,7 @@ export interface BlogPost {
   description: string;
   content: string;
   readingTime: string;
+  wordCount: number;
   tags?: string[];
   image?: string;
 }
@@ -34,13 +35,15 @@ export function getAllPosts(): BlogPost[] {
       const imageMatch = content.match(/!\[.*?\]\((.*?)\)/);
       const image = imageMatch ? imageMatch[1] : undefined;
 
+      const stats = readingTime(content);
       return {
         slug,
         title: data.title || slug,
         date: data.date || "",
         description: data.description || "",
         content,
-        readingTime: readingTime(content).text,
+        readingTime: stats.text,
+        wordCount: stats.words,
         tags: data.tags || [],
         image,
       };
@@ -65,13 +68,15 @@ export function getPostBySlug(slug: string): BlogPost | null {
     const imageMatch = content.match(/!\[.*?\]\((.*?)\)/);
     const image = imageMatch ? imageMatch[1] : undefined;
 
+    const stats = readingTime(content);
     return {
       slug,
       title: data.title || slug,
       date: data.date || "",
       description: data.description || "",
       content,
-      readingTime: readingTime(content).text,
+      readingTime: stats.text,
+      wordCount: stats.words,
       tags: data.tags || [],
       image,
     };

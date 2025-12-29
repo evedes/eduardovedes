@@ -83,6 +83,8 @@ export default function BlogPage() {
                   </time>
                   <span>•</span>
                   <span>{post.readingTime}</span>
+                  <span>•</span>
+                  <span>{post.wordCount.toLocaleString()} words</span>
                 </div>
                 <p className="text-zinc-700 dark:text-zinc-300 mb-4">{post.description}</p>
                 {post.tags && post.tags.length > 0 && (

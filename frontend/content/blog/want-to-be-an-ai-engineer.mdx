@@ -1,0 +1,118 @@
+---
+title: "\"Want to Be an AI Engineer? Here's What the Job Really Looks Like\""
+date: "2025-12-29"
+description: "AI Engineers are the new bridge between machine learning research and production software. They're not data scientists, not traditional software engineers, but a hybrid role focused on integrating AI models (especially LLMs) into real applications"
+tags: ["ai", "ai culture", "ai engineering", "artificial intelligence", "business"]
+---
+
+![The Sideproject Paradox](/blog/want-to-be-an-ai-engineer.png)
+
+# "Want to Be an AI Engineer? Here's What the Job Really Looks Like"
+
+**TLDR:** AI Engineers are the new bridge between machine learning research and production software. They're not data scientists, not traditional software engineers, but a hybrid role focused on integrating AI models (especially LLMs) into real applications. If you're wondering whether this role is hype or substance—it's both, and understanding it matters for your career.
+
+## The Role That Didn't Exist Three Years Ago
+
+Here's something I find fascinating: job postings for "AI Engineer" were essentially non-existent before 2022. Today, they're everywhere—and companies are paying **$200K-$400K+** for senior positions.
+
+So what happened? GPT-3.5 and GPT-4 happened. Suddenly, integrating AI into products shifted from "build complex ML pipelines from scratch" to "call an API and orchestrate responses intelligently." This created a gap that neither traditional ML engineers nor software engineers were perfectly suited to fill.
+
+Enter the AI Engineer.
+
+## AI Engineer vs. ML Engineer vs. Data Scientist: What's the Difference?
+
+Let me break this down with a practical example. Imagine you're building an AI-powered customer support chatbot:
+
+- **Data Scientist:** Would analyze conversation data, build metrics, create reports on customer sentiment patterns, and possibly prototype a classification model in a Jupyter notebook.
+- **ML Engineer:** Would train custom models, optimize them for inference, set up training pipelines, manage feature stores, and deploy models to production infrastructure.
+- **AI Engineer:** Would design the conversation flow, integrate OpenAI or Anthropic APIs, implement RAG (Retrieval-Augmented Generation) to ground responses in your knowledge base, handle prompt engineering, build guardrails, and ensure the system behaves reliably in production.
+See the difference? The AI Engineer isn't training models from scratch—they're *orchestrating* existing models into useful applications. They're closer to a senior software engineer who deeply understands AI capabilities and limitations.
+
+## What AI Engineers Actually Do Day-to-Day
+
+Based on conversations with AI Engineers at companies like Vercel, Notion, and various startups, here's what the role typically involves:
+
+### 1. Prompt Engineering (But Seriously)
+
+Yes, prompt engineering sounds like a meme. But in practice, getting consistent, reliable outputs from LLMs requires serious engineering discipline. AI Engineers spend significant time:
+
+- Designing prompt templates that handle edge cases
+- Building evaluation frameworks to measure prompt quality
+- A/B testing different prompt strategies
+- Managing prompt versions like code
+### 2. Building RAG Systems
+
+Most production AI applications need to work with private data. This means building retrieval pipelines that:
+
+- Chunk and embed documents effectively
+- Choose appropriate vector databases (Pinecone, Weaviate, pgvector)
+- Handle hybrid search combining semantic and keyword matching
+- Optimize retrieval for accuracy and latency
+### 3. LLM Orchestration
+
+Real applications rarely make a single LLM call. AI Engineers design complex flows using tools like LangChain, LlamaIndex, or custom orchestration layers. This includes:
+
+- Chaining multiple model calls
+- Implementing tool use and function calling
+- Managing context windows and token budgets
+- Building fallback logic when models fail
+### 4. Evaluation and Monitoring
+
+Here's where software engineering discipline really matters. AI Engineers build systems to:
+
+- Evaluate model outputs at scale (using other LLMs as judges, human review pipelines)
+- Monitor for hallucinations, toxicity, and quality degradation
+- Track costs and latency in production
+- Implement feedback loops for continuous improvement
+### 5. Safety and Guardrails
+
+Production AI needs boundaries. AI Engineers implement:
+
+- Input validation and prompt injection prevention
+- Output filtering for harmful content
+- Rate limiting and abuse prevention
+- PII detection and handling
+## The Skills Stack That Matters
+
+If you're considering this path, here's what I'm seeing as the essential toolkit:
+
+**Must-haves:**
+
+- Strong software engineering fundamentals (you're still building production systems)
+- Python/Typescript proficiency (the ecosystem is heavily Python-based though in the last years there's a great tendency to move to Typescript)
+- API design and integration experience
+- Understanding of embeddings, vector search, and basic ML concepts
+- Comfort with ambiguity—best practices are still emerging
+**Nice-to-haves:**
+
+- Experience with distributed systems
+- Understanding of transformer architecture (not to build, but to debug)
+- Fine-tuning experience
+- Background in NLP or search systems
+## Is This Role Just Hype?
+
+Let me be pragmatic here. **Some of it is hype.** Many "AI Engineer" positions are really just software engineers who make API calls to OpenAI. The bar is low at some companies.
+
+But the *legitimate* version of this role? It's very real and increasingly critical. Here's why:
+
+Building reliable AI applications is genuinely hard. The failure modes are different from traditional software. Output is non-deterministic. Evaluation is subjective. Costs can spiral. Models can be jailbroken. Context windows have limits. Latency matters differently.
+
+Companies that treat AI integration as "just call the API" are shipping broken products. The ones building robust, scalable AI features need engineers who understand both the software side and the AI side.
+
+## Career Path Considerations
+
+If you're a mid-to-senior software engineer wondering about this transition, here's my take:
+
+**Good fit if:** You're excited about AI, enjoy working at the application layer, and want to be at the forefront of a rapidly evolving field where you can shape best practices.
+
+**Think carefully if:** You prefer stable, well-understood problem domains, or you're primarily interested in the research/model training side (that's ML Engineering or Research).
+
+The role is also evolving fast. What AI Engineers do today will likely look different in two years. That's either exciting or exhausting, depending on your preferences.
+
+## Key Takeaways
+
+- **AI Engineer is a distinct role** focused on integrating AI models into production applications—not training them from scratch. It sits between ML Engineering and traditional software engineering.
+- **The core work involves** prompt engineering, RAG systems, LLM orchestration, evaluation, and safety guardrails. Strong software engineering fundamentals remain essential.
+- **The role exists because** building reliable AI applications is genuinely complex. API access to models is easy; production-quality AI features are not.
+- **It's partially hype, partially real.** Some job postings use the title loosely, but companies serious about AI products need engineers with this specialized skillset.
+- **For your career:** If you're a software engineer interested in AI, this is an accessible path that doesn't require a PhD or years of ML research experience—but it does require learning new concepts and staying adaptable as the field evolves rapidly.
