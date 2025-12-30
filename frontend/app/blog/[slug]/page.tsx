@@ -66,7 +66,7 @@ const mdxComponents = {
   ),
   pre: (props: ComponentPropsWithoutRef<"pre">) => (
     <pre
-      className="bg-zinc-100 dark:bg-[#0d1117] rounded-lg p-6 mb-6 overflow-x-auto shadow-lg border border-zinc-200 dark:border-zinc-800"
+      className="bg-zinc-100 dark:bg-[#0d1117] rounded-lg p-6 mb-6 overflow-x-auto shadow-lg border border-zinc-200 dark:border-zinc-700"
       {...props}
     />
   ),

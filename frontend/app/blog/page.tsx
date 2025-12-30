@@ -3,6 +3,7 @@ import { getAllPosts } from "@/lib/blog";
 import { Merriweather } from "next/font/google";
 import type { Metadata } from "next";
 import BlogPostImage from "@/app/components/BlogPostImage";
+import { AnimatedBackground } from "@/app/components/AnimatedBackground";
 
 const merriweather = Merriweather({
   weight: ["300", "400", "700"],
@@ -35,9 +36,10 @@ export default function BlogPage() {
 
   return (
     <div
-      className={`min-h-screen bg-white dark:bg-zinc-900 transition-colors duration-300 ${merriweather.className}`}
+      className={`min-h-screen relative transition-colors duration-300 ${merriweather.className}`}
     >
-      <div className="max-w-4xl mx-auto px-4 py-16">
+      <AnimatedBackground />
+      <div className="relative max-w-4xl mx-auto px-4 py-16">
         <div className="mb-12">
           <Link
             href="/"
@@ -61,7 +63,7 @@ export default function BlogPage() {
             {posts.map((post) => (
               <article
                 key={post.slug}
-                className="border-b border-zinc-200 dark:border-zinc-800 pb-8 last:border-0"
+                className="border-b border-zinc-200 dark:border-zinc-700 pb-8 last:border-0"
               >
                 {post.image && (
                   <Link href={`/blog/${post.slug}`} className="block mb-4">

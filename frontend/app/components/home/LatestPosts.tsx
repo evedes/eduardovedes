@@ -10,8 +10,8 @@ export function LatestPosts({ posts }: LatestPostsProps) {
   if (posts.length === 0) return null;
 
   return (
-    <div className="w-full max-w-4xl">
-      <div className="flex justify-between items-end mb-8 px-2 border-b border-zinc-200 dark:border-zinc-800 pb-4">
+    <div className="w-full">
+      <div className="flex justify-between items-end mb-8 px-2 border-b border-zinc-200 dark:border-zinc-700 pb-4">
         <h2 className="text-sm font-mono font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-widest">
           Latest Writings
         </h2>
@@ -27,11 +27,11 @@ export function LatestPosts({ posts }: LatestPostsProps) {
           <Link
             key={post.slug}
             href={`/blog/${post.slug}`}
-            className="group block p-6 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-800/50 hover:border-primary-500/50 transition-all duration-300"
+            className="group block p-6 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800/50 hover:border-primary-500/50 transition-all duration-300"
           >
             <div className="flex flex-col sm:flex-row gap-6 items-start">
               {post.image && (
-                <div className="relative w-full sm:w-32 h-32 sm:h-24 shrink-0 rounded bg-zinc-100 dark:bg-zinc-800 overflow-hidden border border-zinc-200 dark:border-zinc-700">
+                <div className="relative w-full sm:w-32 h-32 sm:h-24 shrink-0 rounded bg-zinc-100 dark:bg-zinc-800 overflow-hidden border border-zinc-200 dark:border-zinc-600">
                   <Image
                     src={post.image}
                     alt={post.title}
