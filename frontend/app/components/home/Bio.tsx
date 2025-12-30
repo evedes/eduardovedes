@@ -24,10 +24,11 @@ export function Bio() {
           .
         </p>
         <p>
-          Author of{" "}
-          <span className="font-medium text-foreground">Code Your Future</span>
-          , a guide to career change and success in software engineering.
-          Currently being rewritten for v2 with AI and extended content.
+          Author of <span className="font-medium text-foreground">Code Your Future</span>, a guide
+          to career change and success in software engineering.{" "}
+          <span className="underline">
+            Currently being rewritten for v2 with AI and extended content.
+          </span>
         </p>
       </div>
     </div>

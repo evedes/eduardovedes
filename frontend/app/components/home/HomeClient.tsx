@@ -15,7 +15,7 @@ interface HomeClientProps {
 
 export function HomeClient({ posts }: HomeClientProps) {
   return (
-    <div className="min-h-screen relative transition-colors duration-300 p-6 sm:p-12 overflow-x-hidden font-sans">
+    <div className="min-h-screen relative transition-colors duration-300 p-6 sm:p-12 pt-20 overflow-x-hidden font-sans">
       <AnimatedBackground />
       <motion.div
         initial={{ opacity: 0, y: 20 }}

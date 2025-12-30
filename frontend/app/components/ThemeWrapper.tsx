@@ -1,11 +1,11 @@
 "use client";
 
-import { ThemeToggle } from "./ThemeToggle";
+import { Navbar } from "./Navbar";
 
 export function ThemeWrapper({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <ThemeToggle />
+      <Navbar />
       {children}
     </>
   );

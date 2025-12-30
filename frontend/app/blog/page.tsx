@@ -39,16 +39,7 @@ export default function BlogPage() {
       className={`min-h-screen relative transition-colors duration-300 ${merriweather.className}`}
     >
       <AnimatedBackground />
-      <div className="relative max-w-4xl mx-auto px-4 py-16">
-        <div className="mb-12">
-          <Link
-            href="/"
-            className="text-sm text-zinc-800 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
-          >
-            ← Back to home
-          </Link>
-        </div>
-
+      <div className="relative max-w-4xl mx-auto px-4 py-16 pt-24">
         <h1 className="text-4xl sm:text-5xl font-bold text-zinc-900 dark:text-zinc-100 mb-4">
           Eduardo Vedes&apos; Blog
         </h1>

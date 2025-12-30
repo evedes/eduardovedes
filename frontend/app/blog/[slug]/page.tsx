@@ -6,6 +6,7 @@ import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import rehypeHighlight from "rehype-highlight";
 import { Merriweather } from "next/font/google";
 import { ComponentPropsWithoutRef } from "react";
+import { AnimatedBackground } from "@/app/components/AnimatedBackground";
 
 const merriweather = Merriweather({
   weight: ["300", "400", "700"],
@@ -190,12 +191,13 @@ export default async function BlogPost({
   };
 
   return (
-    <div className={`min-h-screen bg-white dark:bg-zinc-900 transition-colors duration-300 ${merriweather.className}`}>
+    <div className={`min-h-screen relative transition-colors duration-300 ${merriweather.className}`}>
+      <AnimatedBackground />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <article className="max-w-3xl mx-auto px-4 py-16">
+      <article className="relative max-w-3xl mx-auto px-4 py-16 pt-24">
         <div className="mb-8">
           <Link
             href="/blog"
