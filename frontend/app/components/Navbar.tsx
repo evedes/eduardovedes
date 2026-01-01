@@ -3,17 +3,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "./ThemeProvider";
-import { useEffect, useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa6";
 
 export function Navbar() {
   const { theme, toggleTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const isActive = (path: string) => {
     if (path === "/") return pathname === "/";
@@ -58,10 +52,8 @@ export function Navbar() {
             className="p-2 rounded-full bg-zinc-200 dark:bg-zinc-700 hover:bg-zinc-300 dark:hover:bg-zinc-600 transition-colors duration-300"
             aria-label="Toggle theme"
           >
-            {!mounted ? (
+            {theme === null || theme === "light" ? (
               <FaMoon className="size-4 text-zinc-800 dark:text-zinc-200" />
-            ) : theme === "light" ? (
-              <FaMoon className="size-4 text-zinc-800" />
             ) : (
               <FaSun className="size-4 text-zinc-200" />
             )}
