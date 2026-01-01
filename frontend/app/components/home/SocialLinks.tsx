@@ -34,11 +34,11 @@ export function SocialLinks() {
           <FaXTwitter className="size-5" />
         </Link>
         <Link
-          href="https://codeyourfuture.substack.com"
+          href="https://fullstackaiengineer.substack.com"
           target="_blank"
           rel="noopener noreferrer"
           className="p-3 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-zinc-800 dark:text-zinc-400 hover:text-primary-600 dark:hover:text-primary-400"
-          aria-label="Substack"
+          aria-label="Substack - The Full Stack AI Engineer"
         >
           <SiSubstack className="size-5" />
         </Link>
